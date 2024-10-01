@@ -6,7 +6,7 @@
 %\end{filecontents*}
 \documentclass[a4paper]{article}
 \usepackage[14pt]{extsizes}
-\usepackage[cp1251]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage{color}
 \usepackage{graphicx}
@@ -24,139 +24,135 @@
 
 \pagenumbering{arabic}
 
-\renewcommand{\theequation}{\thesection.\thesubsection.\equation}
+\renewcommand{\theequation}{\thesection.\thesubsection.\arabic{equation}}
 \numberwithin{equation}{subsection}
 
-\headsep 18pt%расстояние до верхнего колонтитула
-\headheight 25pt%высота колонтитула
+\headsep 18pt%СЂР°СЃСЃС‚РѕСЏРЅРёРµ РѕС‚ РІРµСЂС…РЅРµРіРѕ РєРѕР»РѕРЅС‚РёС‚СѓР»Р°
+\headheight 25pt%РІС‹СЃРѕС‚Р° РєРѕР»РѕРЅС‚РёС‚СѓР»Р°
 \makeatletter
-\renewcommand{\@oddfoot}{}%нет нижней нумерации
+\renewcommand{\@oddfoot}{}%РЅРµС‚ РЅРёР¶РЅРёС… РєРѕР»РѕРЅС‚РёС‚СѓР»РѕРІ
 \renewcommand{\@evenfoot}{}%
 \makeatother \makeatletter
-\renewcommand{\@oddhead}% определение нумерации вверху и по центру строки
-{\raisebox{0pt}[\headheight][0pt]{% начало блока
+\renewcommand{\@oddhead}% РєРѕР»РѕРЅС‚РёС‚СѓР»С‹ РЅРµС‡РµС‚РЅС‹С… Рё РЅР° РїРµСЂРІРѕР№ СЃС‚СЂР°РЅРёС†Рµ
+{\raisebox{0pt}[\headheight][0pt]{% РЅРѕРјРµСЂР° СЃС‚СЂР°РЅРёС†
 \vbox{\hbox to\textwidth{\strut\hfil
 \thepage\hfil}}}%
 }
 \renewcommand{\@evenhead}%
-{\raisebox{0pt}[\headheight][0pt]{% начало блока
+{\raisebox{0pt}[\headheight][0pt]{% РЅРѕРјРµСЂР° СЃС‚СЂР°РЅРёС†
 \vbox{\hbox to\textwidth{\hfil\strut\thepage\hfil}}}%
 } \makeatother
 
-\newtheorem{theorem}{\quad Теорема}[subsection]
-\newtheorem{lemma}[theorem]{\quad Лемма}
-\newtheorem{corollary}[theorem]{\quad Следствие}
-\newtheorem{proposition}[theorem]{\quad Предложение}
-\newtheorem{definition}[theorem]{\quad Определение}
-\newtheorem{question}[theorem]{\quad Вопрос}
-\newtheorem{example}[theorem]{\quad Пример}
-\newtheorem{remark}[theorem]{\quad Замечание}
+\newtheorem{theorem}{\quad РўРµРѕСЂРµРјР°}[subsection]
+\newtheorem{lemma}[theorem]{\quad Р›РµРјРјР°}
+\newtheorem{corollary}[theorem]{\quad РЎР»РµРґСЃС‚РІРёРµ}
+\newtheorem{proposition}[theorem]{\quad РџСЂРµРґР»РѕР¶РµРЅРёРµ}
+\newtheorem{definition}[theorem]{\quad РћРїСЂРµРґРµР»РµРЅРёРµ}
+\newtheorem{question}[theorem]{\quad Р’РѕРїСЂРѕСЃ}
+\newtheorem{example}[theorem]{\quad РџСЂРёРјРµСЂ}
+\newtheorem{remark}[theorem]{\quad Р—Р°РјРµС‡Р°РЅРёРµ}
 \numberwithin{theorem}{subsection}
 
-\newcommand{\thm}{\noindent\textbf{Теорема }}
-\newcommand{\defi}{\noindent\textbf{Определение }}
-\newcommand{\prop}{\noindent\textbf{Предложение }}
-\newcommand{\lem}{\noindent\textbf{Лемма }}
-\newcommand{\rem}{\noindent\textbf{Замечание }}
-\newcommand{\exx}{\noindent\textbf{Пример }}
-\newcommand{\cor}{\noindent\textbf{Следствие }}
+\newcommand{\thm}{\noindent\textbf{РўРµРѕСЂРµРјР° }}
+\newcommand{\defi}{\noindent\textbf{РћРїСЂРµРґРµР»РµРЅРёРµ }}
+\newcommand{\prop}{\noindent\textbf{РџСЂРµРґР»РѕР¶РµРЅРёРµ }}
+\newcommand{\lem}{\noindent\textbf{Р›РµРјРјР° }}
+\newcommand{\rem}{\noindent\textbf{Р—Р°РјРµС‡Р°РЅРёРµ }}
+\newcommand{\exx}{\noindent\textbf{РџСЂРёРјРµСЂ }}
+\newcommand{\cor}{\noindent\textbf{РЎР»РµРґСЃС‚РІРёРµ }}
 
 \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\divv}{div}
 \DeclareMathOperator{\rot}{rot}
 
-
 \begin{document}
 
-%\renewcommand{\contentsname}{Содержание}
+%\renewcommand{\contentsname}{РЎРѕРґРµСЂР¶Р°РЅРёРµ}
 {
 	\small
 	\
 	\thispagestyle{empty}
 
-	\centerline{\textbf{ ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ
-	ОБРАЗОВАТЕЛЬНОЕ}}
+	\centerline{\textbf{ РњРћРЎРљРћР’РЎРљРР™ Р“РћРЎРЈР”РђР РЎРўР’Р•РќРќР«Р™ РЈРќРР’Р•Р РЎРРўР•Рў
+	РРњР•РќР Рњ.Р’.Р›РћРњРћРќРћРЎРћР’Рђ}}
 
 	\medskip
 
-	\centerline{\sc  УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ}
+	\centerline{\sc  РњРµС…Р°РЅРёРєРѕ-РјР°С‚РµРјР°С‚РёС‡РµСЃРєРёР№ С„Р°РєСѓР»СЊС‚РµС‚}
   
 	\medskip
 
-	\centerline{\sc <<СИБИРСКИЙ ФЕДЕРАЛЬНЫЙ УНИВЕРСИТЕТ>>}
+	\centerline{\sc <<РљР°С„РµРґСЂР° РґРёС„С„РµСЂРµРЅС†РёР°Р»СЊРЅРѕР№ РіРµРѕРјРµС‚СЂРёРё>>}
 
 	\vskip 7em
 
-	{\hfill На правах рукописи\phantom{asdfgas}
+	{\hfill РЅР° РїСЂР°РІР°С… СЂСѓРєРѕРїРёСЃРё\phantom{asdfgas}
 
 	\vskip 1em
 
 	%=============
 
-	%Здесь будет подпись
+	%Р—РґРµСЃСЊ РЅСѓР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ
 
 	\hskip 12.5cm
 	%=============
 
 	\vskip 2em
 
-	\centerline{\sc\normalsize Вилков Павел Юрьевич}
+	\centerline{\sc\normalsize Р’РёР»РєРѕРІ РџР°РІРµР» Р®СЂСЊРµРІРёС‡}
 
 	\bigskip
 	\bigskip
 
-	\centerline{\bf\normalsize НАЗВАНИЕ  }
-	%\centerline{\bf\normalsize В ИЗОТРОПНЫХ И АНИЗОТРОПНЫХ }
-	\centerline{\bf\normalsize НАЗВАНИЕ }
-	%\centerline{\bf\normalsize ПРОСТРАНСТВАМИ ГЕЛЬДЕРА ВЕСОВЫМИ НА БЕСКОНЕЧНОСТИ}
+	\centerline{\bf\normalsize РќРђР—Р’РђРќРР•  }
+	%\centerline{\bf\normalsize Рћ РљРћРњРџР›Р•РљРЎР• Р”Р• Р РђРњРђ РќРђР” Р’Р•РЎРћР’Р«РњР }
+	\centerline{\bf\normalsize Р РђР‘РћРўР« }
+	%\centerline{\bf\normalsize РџР РћРЎРўР РђРќРЎРўР’РђРњР Р“РЃР›Р¬Р”Р•Р Рђ РќРђ РњРќРћР“РћРћР‘Р РђР—РР}
 
 
 	\bigskip
 	\bigskip
 
-	\centerline{1.1.1 --- Вещественный, комплексный и функциональный анализ}
-  \centerline{(физико-математические науки)} 
+	\centerline{1.1.1 --- РњР°С‚РµРјР°С‚РёС‡РµСЃРєРёР№ Р°РЅР°Р»РёР·, РґРёС„С„РµСЂРµРЅС†РёР°Р»СЊРЅС‹Рµ СѓСЂР°РІРЅРµРЅРёСЏ}
+  \centerline{(С„РёР·РёРєРѕ-РјР°С‚РµРјР°С‚РёС‡РµСЃРєРёРµ РЅР°СѓРєРё)} 
 	\bigskip
 	\bigskip
 
-	\centerline{Диссертация на соискание ученой степени}
-	\centerline{кандидата физико-математических наук}
+	\centerline{Р”РёСЃСЃРµСЂС‚Р°С†РёСЏ РЅР° СЃРѕРёСЃРєР°РЅРёРµ СѓС‡РµРЅРѕР№ СЃС‚РµРїРµРЅРё}
+	\centerline{РєР°РЅРґРёРґР°С‚Р° С„РёР·РёРєРѕ-РјР°С‚РµРјР°С‚РёС‡РµСЃРєРёС… РЅР°СѓРє}
 
 	\bigskip
 	\bigskip
 	\vskip 6em
 
-	\hfill Научный руководитель:
+	\hfill РќР°СѓС‡РЅС‹Р№ СЂСѓРєРѕРІРѕРґРёС‚РµР»СЊ:
 
-	\hfill доктор физ.-мат. наук, профессор,
+	\hfill РґРѕРєС‚РѕСЂ С„РёР·.-РјР°С‚. РЅР°СѓРє, РїСЂРѕС„РµСЃСЃРѕСЂ,
 
-	\hfill Шлапунов Александр Анатольевич
+	\hfill РђР»РµРєСЃР°РЅРґСЂ РЎРµСЂРіРµРµРІРёС‡ РЎРєРІРѕСЂС†РѕРІ
 
 	\vskip 7em
 
-	\centerline{Красноярск\,--\,202x}
+	\centerline{РњРѕСЃРєРІР°\,--\,202x}
 }
 }
 
 \newpage
 \normalsize
 \setcounter{page}{2}
-\renewcommand\contentsname{\centering СОДЕРЖАНИЕ}
+\renewcommand\contentsname{\centering РЎРѕРґРµСЂР¶Р°РЅРёРµ}
 \tableofcontents
 
 \newpage
-\section*{\centering ВВЕДЕНИЕ}
-\addcontentsline{toc}{section}{Введение}   
-
+\section*{\centering Р’РІРµРґРµРЅРёРµ}
+\addcontentsline{toc}{section}{Р’РІРµРґРµРЅРёРµ}   
 
 \newpage
 %\captionlabeldelim
 %\renewcommand{\captionlabeldelim}{.}
-\renewcommand\refname{\centering СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+\renewcommand\refname{\centering РЎРїРёСЃРѕРє РёСЃРїРѕР»СЊР·РѕРІР°РЅРЅРѕР№ Р»РёС‚РµСЂР°С‚СѓСЂС‹}
 \begin{thebibliography}{99}
-\addcontentsline{toc}{section}{Список использованных источников}
-
-
+\addcontentsline{toc}{section}{РЎРїРёСЃРѕРє РёСЃРїРѕР»СЊР·РѕРІР°РЅРЅРѕР№ Р»РёС‚РµСЂР°С‚СѓСЂС‹}
 
 \end{thebibliography}
 \end{document}
