@@ -1,0 +1,162 @@
+%\pdfminorversion=7
+%\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+%\Title{On the de Rham complex over weighted Holder spaces}
+%\Author{Ksenia Gagelgans}
+%\Language{ru}
+%\end{filecontents*}
+\documentclass[a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,enumerate,latexsym,cite}
+
+\usepackage[left=25mm, right=10mm, top=2cm, bottom=2cm]{geometry} 
+%\usepackage[unicode, pdftex, %pdfstartview=FitBH, %colorlinks
+%pdfview=FitH]{hyperref}
+
+\usepackage{colorprofiles}
+%\usepackage[a-2b,mathxmp]{pdfx}[2018/12/22]
+
+\baselineskip 25pt
+\renewcommand{\baselinestretch}{1.5}
+
+\pagenumbering{arabic}
+
+\renewcommand{\theequation}{\thesection.\thesubsection.\equation}
+\numberwithin{equation}{subsection}
+
+\headsep 18pt%расстояние до верхнего колонтитула
+\headheight 25pt%высота колонтитула
+\makeatletter
+\renewcommand{\@oddfoot}{}%нет нижней нумерации
+\renewcommand{\@evenfoot}{}%
+\makeatother \makeatletter
+\renewcommand{\@oddhead}% определение нумерации вверху и по центру строки
+{\raisebox{0pt}[\headheight][0pt]{% начало блока
+\vbox{\hbox to\textwidth{\strut\hfil
+\thepage\hfil}}}%
+}
+\renewcommand{\@evenhead}%
+{\raisebox{0pt}[\headheight][0pt]{% начало блока
+\vbox{\hbox to\textwidth{\hfil\strut\thepage\hfil}}}%
+} \makeatother
+
+\newtheorem{theorem}{\quad Теорема}[subsection]
+\newtheorem{lemma}[theorem]{\quad Лемма}
+\newtheorem{corollary}[theorem]{\quad Следствие}
+\newtheorem{proposition}[theorem]{\quad Предложение}
+\newtheorem{definition}[theorem]{\quad Определение}
+\newtheorem{question}[theorem]{\quad Вопрос}
+\newtheorem{example}[theorem]{\quad Пример}
+\newtheorem{remark}[theorem]{\quad Замечание}
+\numberwithin{theorem}{subsection}
+
+\newcommand{\thm}{\noindent\textbf{Теорема }}
+\newcommand{\defi}{\noindent\textbf{Определение }}
+\newcommand{\prop}{\noindent\textbf{Предложение }}
+\newcommand{\lem}{\noindent\textbf{Лемма }}
+\newcommand{\rem}{\noindent\textbf{Замечание }}
+\newcommand{\exx}{\noindent\textbf{Пример }}
+\newcommand{\cor}{\noindent\textbf{Следствие }}
+
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\divv}{div}
+\DeclareMathOperator{\rot}{rot}
+
+
+\begin{document}
+
+%\renewcommand{\contentsname}{Содержание}
+{
+	\small
+	\
+	\thispagestyle{empty}
+
+	\centerline{\textbf{ ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ
+	ОБРАЗОВАТЕЛЬНОЕ}}
+
+	\medskip
+
+	\centerline{\sc  УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ}
+  
+	\medskip
+
+	\centerline{\sc <<СИБИРСКИЙ ФЕДЕРАЛЬНЫЙ УНИВЕРСИТЕТ>>}
+
+	\vskip 7em
+
+	{\hfill На правах рукописи\phantom{asdfgas}
+
+	\vskip 1em
+
+	%=============
+
+	%Здесь будет подпись
+
+	\hskip 12.5cm
+	%=============
+
+	\vskip 2em
+
+	\centerline{\sc\normalsize Вилков Павел Юрьевич}
+
+	\bigskip
+	\bigskip
+
+	\centerline{\bf\normalsize НАЗВАНИЕ  }
+	%\centerline{\bf\normalsize В ИЗОТРОПНЫХ И АНИЗОТРОПНЫХ }
+	\centerline{\bf\normalsize НАЗВАНИЕ }
+	%\centerline{\bf\normalsize ПРОСТРАНСТВАМИ ГЕЛЬДЕРА ВЕСОВЫМИ НА БЕСКОНЕЧНОСТИ}
+
+
+	\bigskip
+	\bigskip
+
+	\centerline{1.1.1 --- Вещественный, комплексный и функциональный анализ}
+  \centerline{(физико-математические науки)} 
+	\bigskip
+	\bigskip
+
+	\centerline{Диссертация на соискание ученой степени}
+	\centerline{кандидата физико-математических наук}
+
+	\bigskip
+	\bigskip
+	\vskip 6em
+
+	\hfill Научный руководитель:
+
+	\hfill доктор физ.-мат. наук, профессор,
+
+	\hfill Шлапунов Александр Анатольевич
+
+	\vskip 7em
+
+	\centerline{Красноярск\,--\,202x}
+}
+}
+
+\newpage
+\normalsize
+\setcounter{page}{2}
+\renewcommand\contentsname{\centering СОДЕРЖАНИЕ}
+\tableofcontents
+
+\newpage
+\section*{\centering ВВЕДЕНИЕ}
+\addcontentsline{toc}{section}{Введение}   
+
+
+\newpage
+%\captionlabeldelim
+%\renewcommand{\captionlabeldelim}{.}
+\renewcommand\refname{\centering СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+\begin{thebibliography}{99}
+\addcontentsline{toc}{section}{Список использованных источников}
+
+
+
+\end{thebibliography}
+\end{document}
