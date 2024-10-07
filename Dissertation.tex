@@ -29,19 +29,14 @@
 
 \headsep 18pt%расстояние от верхнего колонтитула
 \headheight 25pt%высота колонтитула
+
+% Новое определение колонтитулов
 \makeatletter
-\renewcommand{\@oddfoot}{}%нет нижних колонтитулов
-\renewcommand{\@evenfoot}{}%
-\makeatother \makeatletter
-\renewcommand{\@oddhead}% колонтитулы нечетных и на первой странице
-{\raisebox{0pt}[\headheight][0pt]{% номера страниц
-\vbox{\hbox to\textwidth{\strut\hfil
-\thepage\hfil}}}%
-}
-\renewcommand{\@evenhead}%
-{\raisebox{0pt}[\headheight][0pt]{% номера страниц
-\vbox{\hbox to\textwidth{\hfil\strut\thepage\hfil}}}%
-} \makeatother
+\renewcommand{\@oddfoot}{\hfil\thepage\hfil}
+\renewcommand{\@evenfoot}{\hfil\thepage\hfil}
+\renewcommand{\@oddhead}{}
+\renewcommand{\@evenhead}{}
+\makeatother
 
 \newtheorem{theorem}{\quad Теорема}[subsection]
 \newtheorem{lemma}[theorem]{\quad Лемма}
@@ -69,78 +64,78 @@
 
 %\renewcommand{\contentsname}{Содержание}
 {
-	\small
-	\
-	\thispagestyle{empty}
+    \small
+    \
+    \thispagestyle{empty}
 
-	\centerline{\textbf{ МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ
-	ИМЕНИ М.В.ЛОМОНОСОВА}}
+    \centerline{\textbf{ МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ
+    ИМЕНИ М.В.ЛОМОНОСОВА}}
 
-	\medskip
+    \medskip
 
-	\centerline{\sc  Механико-математический факультет}
+    \centerline{\sc  Механико-математический факультет}
   
-	\medskip
+    \medskip
 
-	\centerline{\sc <<Кафедра дифференциальной геометрии>>}
+    \centerline{\sc <<Кафедра дифференциальной геометрии>>}
 
-	\vskip 7em
+    \vskip 7em
 
-	{\hfill на правах рукописи\phantom{asdfgas}
+    {\hfill на правах рукописи\phantom{asdfgas}
 
-	\vskip 1em
+    \vskip 1em
 
-	%=============
+    %=============
 
-	%Здесь нужно изменить
+    %Здесь нужно изменить
 
-	\hskip 12.5cm
-	%=============
+    \hskip 12.5cm
+    %=============
 
-	\vskip 2em
+    \vskip 2em
 
-	\centerline{\sc\normalsize Вилков Павел Юрьевич}
+    \centerline{\sc\normalsize Вилков Павел Юрьевич}
 
-	\bigskip
-	\bigskip
+    \bigskip
+    \bigskip
 
-	\centerline{\bf\normalsize НАЗВАНИЕ  }
-	%\centerline{\bf\normalsize О КОМПЛЕКСЕ ДЕ РАМА НАД ВЕСОВЫМИ }
-	\centerline{\bf\normalsize РАБОТЫ }
-	%\centerline{\bf\normalsize ПРОСТРАНСТВАМИ ГЁЛЬДЕРА НА МНОГООБРАЗИИ}
+    \centerline{\bf\normalsize НАЗВАНИЕ  }
+    %\centerline{\bf\normalsize О КОМПЛЕКСЕ ДЕ РАМА НАД ВЕСОВЫМИ }
+    \centerline{\bf\normalsize РАБОТЫ }
+    %\centerline{\bf\normalsize ПРОСТРАНСТВАМИ ГЁЛЬДЕРА НА МНОГООБРАЗИИ}
 
 
-	\bigskip
-	\bigskip
+    \bigskip
+    \bigskip
 
-	\centerline{1.1.1 --- Математический анализ, дифференциальные уравнения}
-  \centerline{(физико-математические науки)} 
-	\bigskip
-	\bigskip
+    \centerline{1.1.1 --- Математический анализ, дифференциальные уравнения}
+    \centerline{(физико-математические науки)} 
+    \bigskip
+    \bigskip
 
-	\centerline{Диссертация на соискание ученой степени}
-	\centerline{кандидата физико-математических наук}
+    \centerline{Диссертация на соискание ученой степени}
+    \centerline{кандидата физико-математических наук}
 
-	\bigskip
-	\bigskip
-	\vskip 6em
+    \bigskip
+    \bigskip
+    \vskip 6em
 
-	\hfill Научный руководитель:
+    \hfill Научный руководитель:
 
-	\hfill доктор физ.-мат. наук, профессор,
+    \hfill доктор физ.-мат. наук, профессор,
 
-	\hfill Александр Сергеевич Скворцов
+    \hfill Шлапунов Александр Анатольевич
 
-	\vskip 7em
+    \vskip 6em
 
-	\centerline{Москва\,--\,202x}
+    \centerline{Москва\,--\,202x}
 }
 }
 
 \newpage
 \normalsize
-\setcounter{page}{2}
 \renewcommand\contentsname{\centering Содержание}
+\setcounter{page}{2}
 \tableofcontents
 
 \newpage
@@ -148,8 +143,76 @@
 \addcontentsline{toc}{section}{Введение}   
 
 \newpage
-%\captionlabeldelim
-%\renewcommand{\captionlabeldelim}{.}
+
+\section{Предварительные сведенья}
+\subsection{Дифференциальные опреаторы}
+\subsubsection{Эллиптические опреаторы}
+\begin{equation}\label{eqsys}
+   \mathcal{L}u = g
+\end{equation}
+$u = (u_1(x), \dots , u_n(x))^T$ $g = (g_1(x), \dots , g_n(x))^T$
+
+Предположим, что существуют два набора целых чисел (целых векторов)
+\begin{equation}
+   s = (s_1, \dots, s_n) \text{ и } t = (t_1, \dots, t_n)
+\end{equation}
+удовлетворяющих условию $\text{deg}l_{i,j}\leq s_i + t_j$ при всех $i, j$ для которых $l_{i,j}\ne 0$ при этом 
+$l_{i,j} = 0$ если $s_i+t_j < 0$
+
+Главной частью такого опреатора назовем матрицу вида 
+\begin{equation}
+   \tilde{\mathcal{L}}{s,t}(x,D) =
+   \begin{pmatrix}
+   \tilde{l}_{11}^{s,t}(x,D) & \cdots & \tilde{l}_{1N}^{s,t}(x,D) \\
+   \vdots & \ddots & \vdots \\
+   \tilde{l}{N1}^{s,t}(x,D) & \cdots & \tilde{l}_{NN}^{s,t}(x,D)
+   \end{pmatrix},
+\end{equation}
+
+\begin{equation}
+   \tilde{l}{ij}^{s,t}(x,D) =
+   \begin{cases}
+   0, \text{если } \deg l{ij}(x,D) < s_i + t_j \text{ или } l_{ij}(x,D) = 0, \\
+   \sum_{|\alpha|=s_i+t_j} a_{ij}^{\alpha}(x)D^{\alpha},  \text{если } \deg l_{ij}(x,D) = s_i + t_j.
+   \end{cases}
+\end{equation}
+
+\begin{definition}
+   Система уравнений \ref{eqsys} называется эллиптической по Дуглису–Ниренбергу в области $\Omega$,
+   если для любого $x\in\Omega$ и для любого $\xi\in\mathbb{R}\setminus\{0\}$ выполняется условие 
+   \begin{equation*}
+      \text{det}\tilde{\mathcal{L}}{s,t}(x,\xi) \ne 0
+   \end{equation*}
+\end{definition}
+
+\begin{example}
+   \begin{equation}
+      \begin{pmatrix}
+         -\Delta& \nabla \\
+         -\text{div} &  0 \\
+         \end{pmatrix},
+   \end{equation}
+   Очевидно, оператор не является эллептическим по петровсокму
+   Рассмотрим вектора $s = (1, 0, 0)$ и $t = (1, 0, 0)$, тогда главный символ сможем записать в виде 
+   \begin{equation}
+      \begin{pmatrix}
+         -|\xi|^2& \xi \\
+         -\xi &  0 \\
+         \end{pmatrix}\ne 0
+   \end{equation}
+   Аналогично можно рассмотреть оператор 
+   \begin{equation*}
+      \begin{pmatrix}
+         -\mathcal{L}& \nabla \\
+         -\text{div} &  0 \\
+         \end{pmatrix},
+   \end{equation*}
+   где $\mathcal{L}$ -- стационарный оператор Ламе
+\end{example}
+
+
+\newpage
+
 \renewcommand\refname{\centering Список использованной литературы}
 \begin{thebibliography}{99}
 \addcontentsline{toc}{section}{Список использованной литературы}
